@@ -1,0 +1,12 @@
+<Project>
+  <Import Project="Build\Version.props" />
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)bin\$(Configuration)</PackageOutputPath>
+    <Authors>Firito</Authors>
+    <RepositoryUrl>https://github.com/Firito/Dreamland.Core.LinearWorkflow</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/Firito/Dreamland.Core.LinearWorkflow</PackageProjectUrl>
+    <Description>提供线性工作流程的抽象</Description>
+  </PropertyGroup>
+</Project>
