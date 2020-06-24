@@ -66,8 +66,8 @@ namespace Dreamland.Core.LinearWorkFlow
             if (!isOutputAttachedResult) return result;
 
             //如果输出时需要附加结果，则将执行过程中产生的结果附加到返回值中
-            foreach (var (key, value) in resultContents)
-                result.SetProperty(key, value);
+            foreach (var resultContent in resultContents)
+                result.SetProperty(resultContent.Key, resultContent.Value);
             return result;
         }
     }

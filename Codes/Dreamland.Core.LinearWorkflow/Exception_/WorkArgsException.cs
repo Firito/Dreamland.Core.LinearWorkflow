@@ -32,7 +32,7 @@ namespace Dreamland.Core.LinearWorkFlow
         {
         }
 
-        public WorkArgsException(string? message, string paramName)
+        public WorkArgsException(string message, string paramName)
             : base(message, paramName)
         {
         }
