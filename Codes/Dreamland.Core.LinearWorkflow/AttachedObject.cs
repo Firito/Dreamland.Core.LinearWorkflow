@@ -2,6 +2,9 @@
 
 namespace Dreamland.Core.LinearWorkFlow
 {
+    /// <summary>
+    ///     附加对象
+    /// </summary>
     public class AttachedObject
     {
         private readonly List<string> _propertyNameList = new List<string>();

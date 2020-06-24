@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dreamland.Core.LinearWorkflow</name>
+    </assembly>
+    <members>
+        <member name="T:Dreamland.Core.LinearWorkFlow.AttachedObject">
+            <summary>
+                附加对象
+            </summary>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkFlow.AttachedObject.PropertyNameList">
+            <summary>
+                参数名称列表
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.AttachedObject.SetProperty(System.String,System.Object)">
+            <summary>
+                增加或更新参数
+            </summary>
+            <param name="argsName"></param>
+            <param name="argsValue"></param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.AttachedObject.GetProperty``1(System.String,``0@)">
+            <summary>
+                获取
+            </summary>
+            <typeparam name="TArgs"></typeparam>
+            <param name="argsName"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.AttachedProperty">
+            <summary>
+                给任意对象添加属性
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.AttachedProperty.SetAttachedProperty(System.Object,System.String,System.Object)">
+            <summary>
+                设置属性
+            </summary>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.AttachedProperty.GetAttachedProperty(System.Object,System.String)">
+            <summary>
+                获取属性
+            </summary>
+            <param name="obj"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.WorkArgsException">
+            <summary>
+                工作参数异常
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgsException.#ctor">
+            <summary>
+                构造函数
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgsException.#ctor(Dreamland.Core.LinearWorkFlow.WorkArgs)">
+            <summary>
+                构造函数
+            </summary>
+            <param name="args">触发异常的<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" /></param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgsException.#ctor(System.String)">
+            <summary>
+                构造函数
+            </summary>
+            <param name="message">异常信息</param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgsException.#ctor(System.String,System.Exception)">
+            <summary>
+                构造函数
+            </summary>
+            <param name="message">异常信息</param>
+            <param name="innerException">内部异常</param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgsException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+                构造函数
+            </summary>
+            <param name="message">异常信息</param>
+            <param name="paramName">异常参数名称</param>
+            <param name="innerException">内部异常</param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgsException.#ctor(System.String,System.String)">
+            <summary>
+                构造函数
+            </summary>
+            <param name="message">异常信息</param>
+            <param name="paramName">异常参数名称</param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgsException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+                构造函数
+            </summary>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkFlow.WorkArgsException.Message">
+            <summary>
+                异常信息
+            </summary>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.PipelineFactory">
+            <summary>
+                提供类似流水线的工作机制
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.PipelineFactory.#ctor">
+            <summary>
+                构造函数
+            </summary>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkFlow.PipelineFactory.Workers">
+            <summary>
+                <see cref="T:Dreamland.Core.LinearWorkFlow.IWorker" />的列表
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.PipelineFactory.AddWorker(Dreamland.Core.LinearWorkFlow.IWorker)">
+            <summary>
+                添加<see cref="T:Dreamland.Core.LinearWorkFlow.IWorker" />。
+            </summary>
+            <param name="worker"></param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.PipelineFactory.ExecuteWorkAsync(Dreamland.Core.LinearWorkFlow.WorkArgs,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                按顺序执行工作
+                前一个附加的执行信息会附加到下一个工作者的工作参数中
+            </summary>
+            <param name="args">工作参数</param>
+            <param name="token"></param>
+            <param name="isOutputAttachedResult">是否输出附加结果（建议在子流程中设为true，用于将子流程中的结果返回至父流程中）</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.ResponsibilityFactory">
+            <summary>
+                提供类似责任链模式的工作机制
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.ResponsibilityFactory.#ctor">
+            <summary>
+                构造函数
+            </summary>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkFlow.ResponsibilityFactory.Workers">
+            <summary>
+                <see cref="T:Dreamland.Core.LinearWorkFlow.IResponsibilityWorker" />的列表
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.ResponsibilityFactory.AddWorker(Dreamland.Core.LinearWorkFlow.IResponsibilityWorker)">
+            <summary>
+                添加<see cref="T:Dreamland.Core.LinearWorkFlow.IResponsibilityWorker" />
+            </summary>
+            <param name="worker"></param>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.ResponsibilityFactory.ExecuteWorkAsync(Dreamland.Core.LinearWorkFlow.WorkArgs,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+                按顺序执行工作，如果某个<see cref="T:Dreamland.Core.LinearWorkFlow.IResponsibilityWorker" />无法执行，则跳过该 <see cref="T:Dreamland.Core.LinearWorkFlow.IResponsibilityWorker" />
+                前一个附加的执行信息会附加到下一个工作者的工作参数中
+            </summary>
+            <param name="args">工作参数</param>
+            <param name="token"></param>
+            <param name="isOutputAttachedResult">是否输出附加结果（建议在子流程中设为true，用于将子流程中的结果返回至父流程中）</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.IResponsibilityWorker">
+            <summary>
+                工作者的抽象
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.IResponsibilityWorker.CanExecuteWork(Dreamland.Core.LinearWorkFlow.WorkArgs)">
+            <summary>
+                是否能够胜执行任务
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.IWorker">
+            <summary>
+                工作者的抽象
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.IWorker.ExecuteWorkAsync(Dreamland.Core.LinearWorkFlow.WorkArgs,System.Threading.CancellationToken)">
+            <summary>
+                执行任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.WorkArgs">
+            <summary>
+                执行工作所需要的参数
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkArgs.SetProperty(System.String,System.Object)">
+            <summary>
+                增加或更新参数
+            </summary>
+            <param name="argsName"></param>
+            <param name="argsValue"></param>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkFlow.WorkResult">
+            <summary>
+                工作执行结果
+            </summary>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkFlow.WorkResult.IsSuccessful">
+            <summary>
+                是否成功的结果
+            </summary>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkFlow.WorkResult.Error">
+            <summary>
+                错误码
+            </summary>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkFlow.WorkResult.Message">
+            <summary>
+                错误消息
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkFlow.WorkResult.SetProperty(System.String,System.Object)">
+            <summary>
+                增加或更新参数
+            </summary>
+            <param name="argsName"></param>
+            <param name="argsValue"></param>
+        </member>
+    </members>
+</doc>

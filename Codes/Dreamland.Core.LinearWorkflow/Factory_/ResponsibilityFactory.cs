@@ -9,11 +9,17 @@ namespace Dreamland.Core.LinearWorkFlow
     /// </summary>
     public class ResponsibilityFactory
     {
+        /// <summary>
+        ///     构造函数
+        /// </summary>
         public ResponsibilityFactory()
         {
             Workers = new LinkedList<IResponsibilityWorker>();
         }
 
+        /// <summary>
+        ///     <see cref="IResponsibilityWorker" />的列表
+        /// </summary>
         protected LinkedList<IResponsibilityWorker> Workers { get; }
 
         /// <summary>
@@ -31,7 +37,7 @@ namespace Dreamland.Core.LinearWorkFlow
         /// </summary>
         /// <param name="args">工作参数</param>
         /// <param name="token"></param>
-        /// <param name="isOutputAttachedResult">是否输出附加结果</param>
+        /// <param name="isOutputAttachedResult">是否输出附加结果（建议在子流程中设为true，用于将子流程中的结果返回至父流程中）</param>
         /// <returns></returns>
         public async Task<WorkResult> ExecuteWorkAsync(WorkArgs args, CancellationToken token,
             bool isOutputAttachedResult = false)
@@ -57,10 +63,7 @@ namespace Dreamland.Core.LinearWorkFlow
                         resultContents.SetAttachedProperty(propertyName, obj);
                     }
 
-                if (!result.IsSuccessful)
-                {
-                    break;
-                }
+                if (!result.IsSuccessful) break;
             }
 
             if (!isOutputAttachedResult) return result;
