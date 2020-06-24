@@ -58,7 +58,10 @@ namespace Dreamland.Core.LinearWorkFlow
                     if (result.GetProperty(propertyName, out object obj))
                     {
                         innerArgs.SetProperty(propertyName, obj);
-                        resultContents.SetAttachedProperty(propertyName, obj);
+                        if (resultContents.ContainsKey(propertyName))
+                            resultContents[propertyName] = obj;
+                        else
+                            resultContents.Add(propertyName, obj);
                     }
 
                 if (!result.IsSuccessful) break;
