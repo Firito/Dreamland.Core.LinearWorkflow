@@ -11,12 +11,12 @@
         public bool IsSuccessful { get; set; }
 
         /// <summary>
-        ///     错误码
+        ///     结果码
         /// </summary>
-        public int Error { get; set; }
+        public int Code { get; set; }
 
         /// <summary>
-        ///     错误消息
+        ///     消息
         /// </summary>
         public string Message { get; set; }
 

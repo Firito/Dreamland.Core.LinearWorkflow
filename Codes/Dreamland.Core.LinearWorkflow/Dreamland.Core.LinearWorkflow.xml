@@ -212,14 +212,14 @@
                 是否成功的结果
             </summary>
         </member>
-        <member name="P:Dreamland.Core.LinearWorkFlow.WorkResult.Error">
+        <member name="P:Dreamland.Core.LinearWorkFlow.WorkResult.Code">
             <summary>
-                错误码
+                结果码
             </summary>
         </member>
         <member name="P:Dreamland.Core.LinearWorkFlow.WorkResult.Message">
             <summary>
-                错误消息
+                消息
             </summary>
         </member>
         <member name="M:Dreamland.Core.LinearWorkFlow.WorkResult.SetProperty(System.String,System.Object)">
