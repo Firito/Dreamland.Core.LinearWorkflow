@@ -229,5 +229,103 @@
             <param name="argsName"></param>
             <param name="argsValue"></param>
         </member>
+        <member name="T:Dreamland.Core.LinearWorkflow.Extensions.WorkArgs`1">
+            <summary>
+                带数据的<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkflow.Extensions.WorkArgs`1.Data">
+            <summary>
+                数据
+            </summary>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkflow.Extensions.WorkArgsExtension">
+            <summary>
+                提供<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />的拓展方法
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkArgsExtension.DeepCopy(Dreamland.Core.LinearWorkFlow.WorkArgs)">
+            <summary>
+                对<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />对象进行深拷贝，会同时拷贝附加内容
+            </summary>
+            <param name="workArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkArgsExtension.DeepCopy``1(Dreamland.Core.LinearWorkflow.Extensions.WorkArgs{``0})">
+            <summary>
+                对泛型<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />对象进行深拷贝，会同时拷贝附加内容
+            </summary>
+            <param name="workArgs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkArgsExtension.ToWorkArgs``1(Dreamland.Core.LinearWorkFlow.WorkArgs,System.Boolean)">
+            <summary>
+                将<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />转换为泛型对象
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="workArgs">待转换的<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />对象</param>
+            <param name="copyAttachedContent">是否拷贝附加内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkArgsExtension.ToWorkArgs``1(Dreamland.Core.LinearWorkFlow.WorkArgs,``0,System.Boolean)">
+            <summary>
+                将<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />转换为泛型对象
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="workArgs">待转换的<see cref="T:Dreamland.Core.LinearWorkFlow.WorkArgs" />对象</param>
+            <param name="copyAttachedContent">是否拷贝附加内容</param>
+            <param name="data">泛型数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkflow.Extensions.WorkResult`1">
+            <summary>
+                带数据的<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Dreamland.Core.LinearWorkflow.Extensions.WorkResult`1.Data">
+            <summary>
+                数据
+            </summary>
+        </member>
+        <member name="T:Dreamland.Core.LinearWorkflow.Extensions.WorkResultExtension">
+            <summary>
+                提供<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />的拓展方法
+            </summary>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkResultExtension.DeepCopy(Dreamland.Core.LinearWorkFlow.WorkResult)">
+            <summary>
+                对<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />对象进行深拷贝，会同时拷贝附加内容
+            </summary>
+            <param name="workResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkResultExtension.DeepCopy``1(Dreamland.Core.LinearWorkflow.Extensions.WorkResult{``0})">
+            <summary>
+                对泛型<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />对象进行深拷贝，会同时拷贝附加内容
+            </summary>
+            <param name="workResult"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkResultExtension.ToWorkResult``1(Dreamland.Core.LinearWorkFlow.WorkResult,System.Boolean)">
+            <summary>
+                将<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />转换为泛型对象
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="workResult">待转换的<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />对象</param>
+            <param name="copyAttachedContent">是否拷贝附加内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:Dreamland.Core.LinearWorkflow.Extensions.WorkResultExtension.ToWorkResult``1(Dreamland.Core.LinearWorkFlow.WorkResult,``0,System.Boolean)">
+            <summary>
+                将<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />转换为泛型对象
+            </summary>
+            <typeparam name="T">泛型类型</typeparam>
+            <param name="workResult">待转换的<see cref="T:Dreamland.Core.LinearWorkFlow.WorkResult" />对象</param>
+            <param name="copyAttachedContent">是否拷贝附加内容</param>
+            <param name="data">泛型数据</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
